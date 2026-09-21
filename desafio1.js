@@ -2,7 +2,7 @@
 const formulario = document.getElementById("formReserva");
 const resultado = document.getElementById("resultado");
 
-// Informações dos quartos
+// Dados dos quartos
 const quartos = {
     individual: {
         nome: "Quarto Individual",
@@ -50,8 +50,11 @@ formulario.addEventListener("submit", function(event) {
     // Busca os dados do quarto escolhido
     const quarto = quartos[tipoQuarto];
 
-    // Verifica se a quantidade de pessoas é válida
-    if (pessoas > quarto.capacidade) {
+    const quantidadeHospedes = document.getElementById("pessoas");
+    const camposHospedes = document.getElementById("camposHospedes");
+
+     // Verifica se a quantidade de pessoas é válida
+    if (pessoas > quarto.capacidade){
 
         resultado.innerHTML = `
             <div class="alert alert-danger">
@@ -64,7 +67,9 @@ formulario.addEventListener("submit", function(event) {
     }
 
     // Calcula o preço total da hospedagem
-    const total = quarto.preco * diarias;
+    const valorPorPessoa = quarto.preco;
+
+    const total = valorPorPessoa * pessoas * diarias;
 
     // Exibe a confirmação
     resultado.innerHTML = `
@@ -73,6 +78,8 @@ formulario.addEventListener("submit", function(event) {
             <h5>Reserva realizada com sucesso!</h5>
 
             <p><strong>Hóspede:</strong> ${nome}</p>
+
+            <p><strong>Email:</strong> ${document.getElementById("email").value}</p>
 
             <p><strong>Quarto:</strong> ${quarto.nome}</p>
 

@@ -71,4 +71,11 @@
 .btn{
     background-color: #ff0000;
     color: white;
+    border: 1px solid #ff0000;
+}
+
+.btn:hover{
+    background-color: rgb(255, 223, 223);
+    color: #ff0000;
+    border: 1px solid #ff0000;
 }

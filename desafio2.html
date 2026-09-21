@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Daniel & Thalia - TRABALHO</title>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="#">Garoto Park Hotel</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="desafio1.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="desafio2.html">Hospedagem</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="desafio3.html">Serviços</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="desafio4.html">Relatórios</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="desafio5.html">Equipe</a>
+            </li>
+
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Conteúdo -->
+    <main class="container py-4">
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <div class="card shadow">
+
+                    <div class="card-body p-4">
+
+                        <h1 class="h3 mb-2">
+                            Cálculo de Hospedagem
+                        </h1>
+
+                        <p class="text-muted mb-4">
+                            Calcule o valor da hospedagem de acordo
+                            com o quarto, hóspedes e diárias.
+                        </p>
+
+                        <form id="formHospedagem">
+
+                            <!-- Tipo de quarto -->
+                            <div class="mb-3">
+                                <label for="quarto" class="form-label">
+                                    Tipo de quarto
+                                </label>
+
+                                <select id="quarto"
+                                        class="form-select"
+                                        required>
+
+                                    <option value="">
+                                        Selecione um quarto
+                                    </option>
+
+                                    <option value="individual">
+                                        Individual — R$ 100
+                                    </option>
+
+                                    <option value="triplo">
+                                        Triplo Luxo — R$ 150
+                                    </option>
+
+                                    <option value="duplo">
+                                        Duplo — R$ 180
+                                    </option>
+
+                                    <option value="casal">
+                                        Cama de Casal — R$ 200
+                                    </option>
+
+                                </select>
+                            </div>
+
+                            <!-- Pessoas -->
+                            <div class="mb-3">
+                                <label for="pessoas" class="form-label">
+                                    Quantidade de pessoas
+                                </label>
+
+                                <input type="number"
+                                       id="pessoas"
+                                       class="form-control"
+                                       min="1"
+                                       required
+                                       placeholder="Ex.: 2">
+                            </div>
+
+                            <!-- Diárias -->
+                            <div class="mb-4">
+                                <label for="diarias" class="form-label">
+                                    Quantidade de diárias
+                                </label>
+
+                                <input type="number"
+                                       id="diarias"
+                                       class="form-control"
+                                       min="1"
+                                       required
+                                       placeholder="Ex.: 3">
+                            </div>
+
+                            <button type="submit"
+                                    class="btn w-100">
+                                Calcular hospedagem
+                            </button>
+
+                        </form>
+
+                        <!-- Resultado -->
+                        <div id="resultado"
+                             class="mt-4"
+                             aria-live="polite">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="desafio2.js"></script>
+
+</body>
+</html>
