@@ -1,10 +1,13 @@
 
 .navbar{
     background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    opacity: 0.8;
 }
 
 .navbar .nav-link {
-    color: #070707;
+    color: #adaaaa;
     font-weight: bold;
 }
 
@@ -14,7 +17,7 @@
 }
 
 .navbar .nav-link.active {
-    color: #000000;
+    color: #adaaaa;
     text-decoration: underline;
 }
 
@@ -74,8 +77,65 @@
     border: 1px solid #ff0000;
 }
 
+.btn:active{
+    background-color: #ff0000 !important;
+    color: white !important;
+    border: 1px solid #ff02027c !important;
+    transform: scale(0.98) !important;
+}
+
 .btn:hover{
     background-color: rgb(255, 223, 223);
     color: #ff0000;
     border: 1px solid #ff0000;
+}
+.inferno {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.centro{
+    text-align: center;
+}
+.veterano{
+    margin-top: 20px;
+}
+.h1{
+    text-align: center;
+}
+.margin{
+    margin: 30px;
+}
+
+body {
+    padding-top: 70px;
+    background: linear-gradient(to bottom right,#ffd8d8, #ff0000, #4b0000);
+    background-size: 200% 200%;
+    animation: gradiente 6s ease infinite;
+}
+
+@keyframes gradiente {
+    0% {
+    background-position: 0% 0%;
+}
+    50% {
+    background-position: 100% 100%;
+}
+    100% {
+    background-position: 0% 0%;
+}
+}
+
+html.is-changing .transition-main {
+  transition: opacity 250 ms ease-in-out;
+}
+
+html.is-animating .transition-main {
+  opacity: 0;
+}
+
+.footer {
+    background-color: #fff4f4 !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }

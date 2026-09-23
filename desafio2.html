@@ -15,17 +15,17 @@
 <body>
 
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top m-2 transition-main" id="swup">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">Garoto Park Hotel</a>
+        <a class="navbar-brand" href="#">Meu Hotel Digital</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto">
             <li class="nav-item">
             <a class="nav-link" href="index.html">Início</a>
             </li>
@@ -39,32 +39,31 @@
             <a class="nav-link" href="desafio3.html">Serviços</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="desafio4.html">Relatórios</a>
+            <a class="nav-link" href="desafio4.html">Quartos</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="desafio5.html">Equipe</a>
+            <a class="nav-link" href="desafio5.html">Estatísticas</a>
             </li>
-
         </ul>
         </div>
+
     </div>
     </nav>
 
     <!-- Conteúdo -->
-    <main class="container py-4">
+    <main class="container py-4 transition-main" id="swup">
 
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
 
-                <div class="card shadow">
-
+                <div class="card shadow p-4">
                     <div class="card-body p-4">
 
-                        <h1 class="h3 mb-2">
+                        <h1 class="h3 text-center mb-2">
                             Cálculo de Hospedagem
                         </h1>
 
-                        <p class="text-muted mb-4">
+                        <p class="text-muted text-center mb-4">
                             Calcule o valor da hospedagem de acordo
                             com o quarto, hóspedes e diárias.
                         </p>
@@ -111,11 +110,11 @@
                                 </label>
 
                                 <input type="number"
-                                       id="pessoas"
-                                       class="form-control"
-                                       min="1"
-                                       required
-                                       placeholder="Ex.: 2">
+                                        id="pessoas"
+                                        class="form-control"
+                                        min="1"
+                                        required
+                                        placeholder="Ex.: 2">
                             </div>
 
                             <!-- Diárias -->
@@ -125,11 +124,11 @@
                                 </label>
 
                                 <input type="number"
-                                       id="diarias"
-                                       class="form-control"
-                                       min="1"
-                                       required
-                                       placeholder="Ex.: 3">
+                                        id="diarias"
+                                        class="form-control"
+                                        min="1"
+                                        required
+                                        placeholder="Ex.: 3">
                             </div>
 
                             <button type="submit"
@@ -141,18 +140,29 @@
 
                         <!-- Resultado -->
                         <div id="resultado"
-                             class="mt-4"
-                             aria-live="polite">
+                                class="mt-4"
+                                aria-live="polite">
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
 
+    <footer class="footer bg-light text-center m-4">
+        <div class="container fluid p-4" >
+            <div class="row">   
+                <div class="col-lg-12 col-sm-12">  
+                    <h6>Disciplina:</h6> <p>Introdução à Programação para Web</p>
+                    <h6>Professor:</h6>  <p>Robson Pires Borges</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="desafio2.js"></script>
+    <script type="module" src="swup.js"></script>
 
 </body>
 </html>
