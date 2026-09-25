@@ -124,3 +124,7 @@ html.is-animating .transition-main {
     opacity: 0.1 !important;
     transform: scale(2) !important;
 }
+
+.negrito{
+    font-weight: bold;
+}

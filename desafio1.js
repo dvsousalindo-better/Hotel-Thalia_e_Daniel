@@ -62,8 +62,6 @@ formulario.addEventListener("submit", function(event) {
 
     const numeroQuarto = Math.floor(Math.random() * 100) + 1;
 
-    console.log(numeroQuarto);
-
     // Exibe a confirmação
     resultado.innerHTML = `
         <div class="alert alert-success">

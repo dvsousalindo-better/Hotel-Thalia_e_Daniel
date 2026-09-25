@@ -59,67 +59,48 @@
                         <div class="card-body p-4">
 
                             <h1 class="h3 text-center mb-2">
-                                Verificação de Disponibilidade
+                                Quartos mais Utilizados
                             </h1>
 
                             <p class="text-muted text-center mb-4">
-                                Verifique se há quartos disponíveis para uma nova reserva.
+                                ranking de 1 a 3 sobre ocupação dos quartos.
                             </p>
 
                             <form id="formDisponibilidade">
 
-                                <div class="mb-3">
-                                    <label for="totalQuartos" class="form-label">
-                                        Total de quartos
-                                    </label>
-
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        id="totalQuartos"
-                                        min="1"
-                                        placeholder="Digite o total de quartos"
-                                        value=""
-                                        required>
-                                </div>
+                               
 
 
                                 <div class="mb-3">
                                     <label for="quartosOcupados" class="form-label">
-                                        Quartos ocupados
+                                        1° lugar: <span id="primeiroLugar"></span>
                                     </label>
 
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        id="quartosOcupados"
-                                        min="0"
-                                        value=""
-                                        placeholder="Digite o número de quartos ocupados"
-                                        required>
+                                    
                                 </div>
 
 
                                 <div class="mb-4">
                                     <label for="quartosReserva" class="form-label">
-                                        Quartos desejados
+                                        2° lugar: <span id="segundoLugar"></span>
                                     </label>
 
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        id="quartosReserva"
-                                        min="1"
-                                        value=""
-                                        placeholder="Digite o número de quartos desejados"
-                                        required>
+                                    
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="quartosReserva" class="form-label">
+                                        3° lugar: <span id="terceiroLugar"></span>
+                                    </label>
+
+                                    
                                 </div>
 
 
                                 <button
                                     type="submit"
                                     class="btn w-100">
-                                    Verificar disponibilidade
+                                    Fazer ranking!
                                 </button>
 
 
