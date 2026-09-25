@@ -42,7 +42,7 @@
 }
 
 .h1{
-    color: #ff0000;
+    color: #faf6f6;
     font-weight: bold;
 }
 
@@ -53,22 +53,6 @@
     border-collapse: separate;
     border-spacing: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.table1 {
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border-collapse: separate;
-    border-spacing: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.table1 thead th {
-    background-color: #ff0000;
-    color: white;
-    padding: 18px;
-    text-align: center;
 }
 
 .btn{
@@ -89,11 +73,7 @@
     color: #ff0000;
     border: 1px solid #ff0000;
 }
-.inferno {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
+
 .centro{
     text-align: center;
 }
@@ -138,4 +118,9 @@ html.is-animating .transition-main {
     background-color: #fff4f4 !important;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.btn1{
+    opacity: 0.1 !important;
+    transform: scale(2) !important;
 }

@@ -6,26 +6,22 @@ const resultado = document.getElementById("resultado");
 const quartos = {
     individual: {
         nome: "Quarto Individual",
-        capacidade: 1,
-        preco: 100
+        capacidade: 1
     },
 
     triplo: {
         nome: "Quarto Triplo Luxo",
-        capacidade: 3,
-        preco: 150
+        capacidade: 3
     },
 
     duplo: {
         nome: "Quarto Duplo",
-        capacidade: 2,
-        preco: 180
+        capacidade: 2
     },
 
     casal: {
         nome: "Quarto com Cama de Casal",
-        capacidade: 2,
-        preco: 200
+        capacidade: 2
     }
 };
 
@@ -37,6 +33,7 @@ formulario.addEventListener("submit", function(event) {
 
     // Captura os valores dos campos
     const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
     const tipoQuarto = document.getElementById("quarto").value;
 
     const pessoas = Number(
@@ -49,9 +46,6 @@ formulario.addEventListener("submit", function(event) {
 
     // Busca os dados do quarto escolhido
     const quarto = quartos[tipoQuarto];
-
-    const quantidadeHospedes = document.getElementById("pessoas");
-    const camposHospedes = document.getElementById("camposHospedes");
 
      // Verifica se a quantidade de pessoas é válida
     if (pessoas > quarto.capacidade){
@@ -66,20 +60,19 @@ formulario.addEventListener("submit", function(event) {
         return;
     }
 
-    // Calcula o preço total da hospedagem
-    const valorPorPessoa = quarto.preco;
+    const numeroQuarto = Math.floor(Math.random() * 100) + 1;
 
-    const total = valorPorPessoa * pessoas * diarias;
+    console.log(numeroQuarto);
 
     // Exibe a confirmação
     resultado.innerHTML = `
         <div class="alert alert-success">
 
-            <h5>Reserva realizada com sucesso!</h5>
+            <h5>Reserva adicionada com sucesso!</h5>
 
             <p><strong>Hóspede:</strong> ${nome}</p>
 
-            <p><strong>Email:</strong> ${document.getElementById("email").value}</p>
+            <p><strong>Email:</strong> ${email}</p>
 
             <p><strong>Quarto:</strong> ${quarto.nome}</p>
 
@@ -87,13 +80,10 @@ formulario.addEventListener("submit", function(event) {
 
             <p><strong>Diárias:</strong> ${diarias}</p>
 
+            <p><strong>Número do quarto:</strong> ${numeroQuarto}</p>
+
             <hr>
 
-            <h5>
-                Total: R$ ${total.toFixed(2).replace(".", ",")}
-            </h5>
-
-        </div>
-    `;
+        </div>`;
 
 });
