@@ -1,29 +1,76 @@
-const quartos = [
-    "Individual",
-    "Triplo Luxo",
-    "Duplo",
-    "Cama de Casal"
-];
-
 document.getElementById("formDisponibilidade").addEventListener("submit", function(event) {
-    
+
     event.preventDefault();
 
-    const quartosComNumeros = quartos.map(quarto => {
-        return {
-            nome: quarto,
-            numero: Math.floor(Math.random() * 30) + 1
-        };
+    const individual = Number(document.getElementById("individual").value);
+    const casal = Number(document.getElementById("casal").value);
+    const luxo = Number(document.getElementById("luxo").value);
+    const duplo = Number(document.getElementById("duplo").value);
+
+    const quartos = [
+        {
+            nome: "Quarto Individual",
+            quantidade: individual
+        },
+        {
+            nome: "Quarto Casal",
+            quantidade: casal
+        },
+        {
+            nome: "Quarto Triplo Luxo",
+            quantidade: luxo
+        },
+        {
+            nome: "Quarto Duplo",
+            quantidade: duplo
+        }
+    ];
+
+    const totalQuartos = 100;
+
+    const totalOcupados =
+        individual +
+        duplo +
+        luxo +
+        casal;
+
+    if (totalOcupados > totalQuartos) {
+
+        resultado.innerHTML = `
+            <div class="alert alert-danger">
+
+                A quantidade de quartos ocupados
+                não pode ser maior que
+                ${totalQuartos}.
+
+            </div>
+        `;
+
+        return;
+    }
+
+    quartos.sort(function(a, b) {
+        return b.quantidade - a.quantidade;
     });
 
-    quartosComNumeros.sort((a, b) => b.numero - a.numero);
+    document.getElementById("resultado").innerHTML = `
+        <div class="alert alert-primary">
+            <h5>🏆 Ranking dos quartos mais utilizados</h5>
 
-    document.getElementById("primeiroLugar").textContent =
-        `${quartosComNumeros[0].nome} - ${quartosComNumeros[0].numero} quartos`;
+            <p>
+                <strong>1° lugar:</strong>
+                ${quartos[0].nome} — ${quartos[0].quantidade} ocupações
+            </p>
 
-    document.getElementById("segundoLugar").textContent =
-        `${quartosComNumeros[1].nome} - ${quartosComNumeros[1].numero} quartos`;
+            <p>
+                <strong>2° lugar:</strong>
+                ${quartos[1].nome} — ${quartos[1].quantidade} ocupações
+            </p>
 
-    document.getElementById("terceiroLugar").textContent =
-        `${quartosComNumeros[2].nome} - ${quartosComNumeros[2].numero} quartos`;
+            <p>
+                <strong>3° lugar:</strong>
+                ${quartos[2].nome} — ${quartos[2].quantidade} ocupações
+            </p>
+        </div>
+    `;
 });

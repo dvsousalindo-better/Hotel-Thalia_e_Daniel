@@ -1,7 +1,6 @@
 const formulario = document.getElementById("formHospedagem");
 const resultado = document.getElementById("resultado");
 
-// Dados dos quartos
 const quartos = {
   individual: {
     nome: "Quarto Individual",
@@ -28,11 +27,9 @@ const quartos = {
   },
 };
 
-// Processar o formulário
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // Capturar os valores
   const tipoQuarto = document.getElementById("quarto").value;
 
   const pessoas = Number(document.getElementById("pessoas").value);
@@ -41,7 +38,6 @@ formulario.addEventListener("submit", function (event) {
 
   const quarto = quartos[tipoQuarto];
 
-  // Verificar capacidade
   if (pessoas > quarto.capacidade) {
     resultado.innerHTML = `
             <div class="alert alert-danger">
@@ -53,12 +49,10 @@ formulario.addEventListener("submit", function (event) {
     return;
   }
 
-  // Calcular o valor
   const valorPorPessoa = quarto.preco;
 
   const total = valorPorPessoa * pessoas * diarias;
 
-  // Exibir resultado
   resultado.innerHTML = `
         <div class="alert alert-success">
 

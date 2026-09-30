@@ -25,13 +25,9 @@ const quartos = {
     }
 };
 
-// Quando o formulário for enviado
 formulario.addEventListener("submit", function(event) {
-
-    // Impede a página de recarregar
     event.preventDefault();
 
-    // Captura os valores dos campos
     const nome = document.getElementById("nome").value.trim();
     const email = document.getElementById("email").value.trim();
     const tipoQuarto = document.getElementById("quarto").value;
@@ -44,10 +40,8 @@ formulario.addEventListener("submit", function(event) {
         document.getElementById("diarias").value
     );
 
-    // Busca os dados do quarto escolhido
     const quarto = quartos[tipoQuarto];
 
-     // Verifica se a quantidade de pessoas é válida
     if (pessoas > quarto.capacidade){
 
         resultado.innerHTML = `
@@ -62,7 +56,6 @@ formulario.addEventListener("submit", function(event) {
 
     const numeroQuarto = Math.floor(Math.random() * 100) + 1;
 
-    // Exibe a confirmação
     resultado.innerHTML = `
         <div class="alert alert-success">
 
